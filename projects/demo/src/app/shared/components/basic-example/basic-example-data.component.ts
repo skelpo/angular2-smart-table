@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Settings} from "../../../../../../ngx-smart-table/src/lib/lib/settings";
+import {Settings} from "ngx-smart-table";
 
 @Component({
   selector: 'basic-example-data',
