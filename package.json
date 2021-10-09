@@ -1,7 +1,18 @@
 {
-  "name": "ngx-smart-table",
-  "version": "1.0.0",
+  "name": "@fiorex/ngx-smart-table",
+  "version": "1.0.1",
+  "description": "Angular 2 Smart Table",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dj-fiorex/ngx-smart-table.git"
+  },
+  "author": "dj-fiorex",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dj-fiorex/ngx-smart-table/issues"
+  },
+  "homepage": "https://github.com/dj-fiorex/ngx-smart-table#readme",
   "scripts": {
     "analyze": "webpack-bundle-analyzer dist/stats.json",
     "build:ci": "npm run build:demo && npm run build:lib",
