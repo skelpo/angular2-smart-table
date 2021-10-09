@@ -1,9 +1,12 @@
-# [1.0.0](https://github.com/dj-fiorex/ng2-smart-table/compare/v1.7.2...v1.0.0) (2021-10-09)
+
+## [1.0.1](https://github.com/dj-fiorex/ngx-smart-table/compare/v1.7.2...v1.0.1) (2021-10-09)
+
 
 
 ### Features
 
-* custom action renderComponent ([17493c1](https://github.com/dj-fiorex/ng2-smart-table/commit/17493c16bc081fea869fc6c423f306a8c9392946))
+* custom action renderComponent ([17493c1](https://github.com/dj-fiorex/ngx-smart-table/commit/17493c16bc081fea869fc6c423f306a8c9392946))
+
 
 
 
