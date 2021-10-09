@@ -6,3 +6,4 @@ export { Cell } from './lib/lib/data-set/cell';
 export { LocalDataSource } from './lib/lib/data-source/local/local.data-source';
 export { ServerDataSource } from './lib/lib/data-source/server/server.data-source';
 export * from './lib/ngx-smart-table.component';
+export {Settings} from './lib/lib/settings';

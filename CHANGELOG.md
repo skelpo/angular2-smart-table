@@ -1,3 +1,7 @@
+# [2.0.0](https://github.com/dj-fiorex/ngx-smart-table/compare/v1.0.1...v2.0.0) (2021-10-09)
+
+
+
 ## [1.0.1](https://github.com/dj-fiorex/ngx-smart-table/compare/v1.7.2...v1.0.1) (2021-10-09)
 
 
