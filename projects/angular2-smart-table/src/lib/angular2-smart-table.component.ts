@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output, SimpleChange } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { DataSet } from './lib/data-set/data-set';
 import { Row } from './lib/data-set/row';
 import { DataSource } from './lib/data-source/data-source';
 import { LocalDataSource } from './lib/data-source/local/local.data-source';
@@ -30,6 +31,7 @@ export class Angular2SmartTableComponent {
   @Output() editConfirm = new EventEmitter<any>();
   @Output() createConfirm = new EventEmitter<any>();
   @Output() rowHover: EventEmitter<any> = new EventEmitter<any>();
+  @Output() afterGridInit: EventEmitter<DataSet> = new EventEmitter<DataSet>();
 
   tableClass!: string;
   tableId!: string;
@@ -223,6 +225,11 @@ export class Angular2SmartTableComponent {
 
     this.subscribeToOnSelectRow();
     this.subscribeToOnDeselectRow();
+    /** Delay a bit the grid init event trigger to prevent empty rows */
+    setTimeout(() => {
+      this.afterGridInit.emit(this.grid.dataSet);
+    }, 10);
+
   }
 
   prepareSource(): DataSource {

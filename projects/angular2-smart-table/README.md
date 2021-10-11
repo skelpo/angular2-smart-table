@@ -5,8 +5,6 @@
 
 I'm a self-employed developer so any help is welcome, open a pull request and help me improve this library
 
-
-
 ## NEW Features
 * 🚀 Added Expandable Row (thanks [Samir](https://github.com/mominsamir))
 * 🚀 Added Column resizing (thanks [dreswgfuse](https://github.com/dreswgfuse))
@@ -17,6 +15,9 @@ I'm a self-employed developer so any help is welcome, open a pull request and he
 * 🚀 Added Column sorting/filtering to nested objects (thanks [TejinderEvry](https://github.com/TejinderEvry))
 * 🚀 Added row data to custom component render (thanks [marchrius](https://github.com/marchrius))
 * 🚀 Include row data when invoking filterFunction (thanks [darrenhollick](https://github.com/darrenhollick))
+* 🚀 Ability to select a row programmatically (thanks [NicolaLC](https://github.com/NicolaLC))
+
+
 ## Features
 * Local data source (Server/API DataSource is on its way)
 * Filtering

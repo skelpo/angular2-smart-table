@@ -10,7 +10,7 @@ export class DataSet {
   protected rows: Array<Row> = [];
   protected selectedRow?: Row;
   protected expandedRow?: Row;
-  protected willSelect!: string;
+  protected willSelect: string = '';
 
   constructor(data: Array<any> = [], protected columnSettings: Object) {
     this.createColumns(columnSettings);

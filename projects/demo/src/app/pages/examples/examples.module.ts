@@ -32,6 +32,7 @@ import {
   ButtonViewComponent,
 } from './custom-edit-view/basic-example-button-view.component';
 import { BasicExampleCustomActionsItemComponent } from './custom-edit-view/basic-example-custom-actions-item.component';
+import { BasicExampleRowSelectionComponent } from './various/row-selection/basic-example-row-selection.component';
 
 const EXAMPLES_COMPONENTS = [
   AdvancedExampleFiltersComponent,
@@ -43,6 +44,7 @@ const EXAMPLES_COMPONENTS = [
   BasicExampleLoadComponent,
   BasicExampleMultiSelectComponent,
   BasicExampleSourceComponent,
+  BasicExampleRowSelectionComponent,
   CustomEditorComponent,
   CustomRenderComponent,
   CustomFilterComponent,
