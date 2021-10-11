@@ -39,11 +39,11 @@ This command will create a record in your `package.json` file and install the pa
 
 ## Minimal Setup Example
 
-First thing you need to do is to import the ngx-smart-table directives into your component.
+First thing you need to do is to import the angular2-smart-table directives into your component.
 
 ```
 
-import { NgxSmartTableModule } from 'ngx-smart-table';
+import { Angular2SmartTableModule } from 'angular2-smart-table';
 
 ```
 
@@ -66,7 +66,7 @@ Then register it by adding to the list of directives of your module:
 ```
 
 Now, we need to configure the table and add it into the template. The only <strong>required</strong> setting for the component to start working is a columns configuration.
-Let's register <i>settings</i> property inside of the component where we want to have the table and configure some columns [Settings documentation](https://github.com/dj-fiorex/ngx-smart-table):
+Let's register <i>settings</i> property inside of the component where we want to have the table and configure some columns [Settings documentation](https://github.com/dj-fiorex/angular2-smart-table):
     
 ```
 settings = {
@@ -87,7 +87,7 @@ settings = {
 };
 ```
 
-Finally let's put the ngx-smart-table component inside of the template:
+Finally let's put the angular2-smart-table component inside of the template:
 
 ```
 // ...
@@ -145,7 +145,7 @@ And pass the data to the table:
 Now you have some data in the table. -->
  
 ## Further Documentation
-Installation, customization and other useful articles: https://github.com/dj-fiorex/ngx-smart-table
+Installation, customization and other useful articles: https://github.com/dj-fiorex/angular2-smart-table
 
 ## How can I support developers?
 - Star our GitHub repo :star:

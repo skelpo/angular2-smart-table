@@ -24,19 +24,19 @@ export class AdvancedExamplesCustomEditorComponent {
       id: 2,
       name: 'Ervin Howell',
       username: 'Antonette',
-      link: '<a href="https://github.com/akveo/ng2-admin">Ng2 Admin</a>',
+      link: '<a href="http://www.google.com">Google</a>',
     },
     {
       id: 3,
       name: 'Clementine Bauch',
       username: 'Samantha',
-      link: '<a href="https://github.com/dj-fiorex/ngx-smart-table">Ngx smart table</a>',
+      link: '<a href="https://github.com/dj-fiorex/angular2-smart-table">Angular2 smart table</a>',
     },
     {
       id: 4,
       name: 'Patricia Lebsack',
       username: 'Karianne',
-      link: '<a href="https://github.com/akveo/blur-admin">Blur Admin</a>',
+      link: '<a href="http://www.google.com">Google</a>',
     },
   ];
 
