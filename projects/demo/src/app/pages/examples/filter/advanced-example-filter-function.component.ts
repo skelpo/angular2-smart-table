@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { Cell, Row } from 'angular2-smart-table';
 
 @Component({
   selector: 'advanced-example-filter-function',
   template: `
-    <ngx-smart-table [settings]="settings" [source]="data"></ngx-smart-table>
+    <angular2-smart-table [settings]="settings" [source]="data"></angular2-smart-table>
   `,
 })
 export class AdvancedExampleFilterFunctionComponent {
@@ -95,7 +96,7 @@ export class AdvancedExampleFilterFunctionComponent {
       },
       companyName: {
         title: 'Company Name',
-        filterFunction: (cell, search, row) => {
+        filterFunction: (cell: any, search: string, row: any) => {
           if (search.length > 0 && search[0] === '-') {
             const re = new RegExp(search.substring(1), 'gi');
             if (cell.match(re)) {

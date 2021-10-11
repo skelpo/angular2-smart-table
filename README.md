@@ -30,7 +30,7 @@ I'm a self-employed developer so any help is welcome, open a pull request and he
 The library is available as npm package, so all you need to do is to run the following command:
 
 ```
-TO BE PUBLISHED TO NPM
+npm i angular2-smart-table
 ```
 
 This command will create a record in your `package.json` file and install the package into the npm modules folder.
@@ -56,7 +56,7 @@ Then register it by adding to the list of directives of your module:
   imports: [
     // ...
     
-    NgxSmartTableModule,
+    Angular2SmartTableModule,
     
     // ...
   ],
@@ -94,7 +94,7 @@ Finally let's put the ngx-smart-table component inside of the template:
 
 @Component({
   template: `
-    <ngx-smart-table [settings]="settings"></ngx-smart-table>
+    <angular2-smart-table [settings]="settings"></angular2-smart-table>
   `
 })
 // ...
@@ -136,7 +136,7 @@ And pass the data to the table:
 
 @Component({
   template: `
-    <ngx-smart-table [settings]="settings" [source]="data"></ngx-smart-table>
+    <angular2-smart-table [settings]="settings" [source]="data"></angular2-smart-table>
   `
 })
 // ...
@@ -162,6 +162,3 @@ Installation, customization and other useful articles: https://github.com/dj-fio
 [<img alt="nureha" src="https://avatars2.githubusercontent.com/u/7064537?v=3&s=60" width="60">](https://github.com/nureha)[<img alt="vlupu10" src="https://avatars1.githubusercontent.com/u/3597512?v=3&s=60" width="60">](https://github.com/vlupu10)[<img alt="zhouhao27" src="https://avatars1.githubusercontent.com/u/8099731?v=3&s=60" width="60">](https://github.com/zhouhao27)[<img alt="hkb1990" src="https://avatars1.githubusercontent.com/u/2637138?v=3&s=60" width="60">](https://github.com/hkb1990)[<img alt="liaosong" src="https://avatars0.githubusercontent.com/u/3927282?v=3&s=60" width="60">](https://github.com/liaosong)[<img alt="ktriek" src="https://avatars2.githubusercontent.com/u/4461059?v=3&s=60" width="60">](https://github.com/ktriek)
 
 ### From dj-fiorex, forked from akveo
-
-Enjoy :metal:
-We're always happy to hear your feedback!

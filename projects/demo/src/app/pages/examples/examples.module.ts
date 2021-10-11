@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxSmartTableModule } from 'ngx-smart-table';
+import { Angular2SmartTableModule } from 'angular2-smart-table';
 
 import { SharedModule } from '../../shared/shared.module';
 import { routes } from './examples.routes';
@@ -64,7 +64,7 @@ const EXAMPLES_COMPONENTS = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
-    NgxSmartTableModule,
+    Angular2SmartTableModule,
     SharedModule,
   ],
   entryComponents: [

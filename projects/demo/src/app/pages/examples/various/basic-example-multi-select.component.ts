@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
+import { SelectModeOptions } from 'angular2-smart-table';
 
 @Component({
   selector: 'basic-example-multi-select',
   template: `
-    <ngx-smart-table [settings]="settings" [source]="data"></ngx-smart-table>
+    <angular2-smart-table [settings]="settings" [source]="data"></angular2-smart-table>
   `,
 })
 export class BasicExampleMultiSelectComponent {
 
   settings = {
-    selectMode: 'multi',
+    selectMode: SelectModeOptions.Multi,
     columns: {
       id: {
         title: 'ID',

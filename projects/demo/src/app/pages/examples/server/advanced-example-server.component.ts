@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ServerDataSource } from 'ngx-smart-table';
+import { ServerDataSource } from 'angular2-smart-table';
 
 @Component({
   selector: 'advanced-example-server',
   template: `
-    <ngx-smart-table [settings]="settings" [source]="source"></ngx-smart-table>
+    <angular2-smart-table [settings]="settings" [source]="source"></angular2-smart-table>
   `,
 })
 export class AdvancedExampleServerComponent {

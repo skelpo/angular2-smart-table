@@ -4,7 +4,7 @@ import { BasicExampleCustomActionsItemComponent } from './basic-example-custom-a
 @Component({
   selector: 'basic-example-custom-actions',
   template: `
-    <ngx-smart-table [settings]="settings" [source]="data" (custom)="onCustom($event)"></ngx-smart-table>
+    <angular2-smart-table [settings]="settings" [source]="data" (custom)="onCustom($event)"></angular2-smart-table>
   `,
 })
 export class BasicExampleCustomActionsComponent {
@@ -84,7 +84,7 @@ export class BasicExampleCustomActionsComponent {
     },
   ];
 
-  onCustom(event) {
+  onCustom(event: any) {
     alert(`Custom event '${event.action}' fired on row №: ${event.data.id}`);
   }
 }

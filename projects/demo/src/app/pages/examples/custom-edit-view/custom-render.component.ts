@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { ViewCell } from 'ngx-smart-table';
+import { ViewCell } from 'angular2-smart-table';
 
 @Component({
   template: `
@@ -9,9 +9,9 @@ import { ViewCell } from 'ngx-smart-table';
 })
 export class CustomRenderComponent implements ViewCell, OnInit {
 
-  renderValue: string;
+  renderValue!: string;
 
-  @Input() value: string | number;
+  @Input() value!: string | number;
   @Input() rowData: any;
 
   ngOnInit() {

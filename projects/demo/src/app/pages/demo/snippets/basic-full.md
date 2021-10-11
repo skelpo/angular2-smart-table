@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'basic-example-data',
   styles: [],
   template: `
-    <ngx-smart-table [settings]="settings" [source]="data"></ngx-smart-table>
+    <angular2-smart-table [settings]="settings" [source]="data"></angular2-smart-table>
   `
 })
 export class BasicExampleDataComponent {

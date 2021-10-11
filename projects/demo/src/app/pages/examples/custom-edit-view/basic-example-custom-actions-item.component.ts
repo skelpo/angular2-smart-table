@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   `,
 })
 export class BasicExampleCustomActionsItemComponent implements OnInit {
-  renderValue: string;
+  renderValue!: string;
 
   @Input() action: any;
   @Input() rowData: any;

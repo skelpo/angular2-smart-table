@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { ViewCell } from 'ngx-smart-table';
+import { ViewCell, ColumnType } from 'angular2-smart-table';
 
 @Component({
   selector: 'button-view',
@@ -8,9 +8,9 @@ import { ViewCell } from 'ngx-smart-table';
   `,
 })
 export class ButtonViewComponent implements ViewCell, OnInit {
-  renderValue: string;
+  renderValue!: string;
 
-  @Input() value: string | number;
+  @Input() value!: string | number;
   @Input() rowData: any;
 
   @Output() save: EventEmitter<any> = new EventEmitter();
@@ -29,7 +29,7 @@ export class ButtonViewComponent implements ViewCell, OnInit {
 @Component({
   selector: 'basic-example-button-view',
   template: `
-    <ngx-smart-table [settings]="settings" [source]="data"></ngx-smart-table>
+    <angular2-smart-table [settings]="settings" [source]="data"></angular2-smart-table>
   `,
 })
 export class BasicExampleButtonViewComponent implements OnInit {
@@ -38,22 +38,26 @@ export class BasicExampleButtonViewComponent implements OnInit {
     columns: {
       id: {
         title: 'ID',
+        type: ColumnType.Text,
       },
       name: {
         title: 'Full Name',
+        type: ColumnType.Text,
       },
       username: {
         title: 'User Name',
+        type: ColumnType.Text,
       },
       email: {
         title: 'Email',
+        type: ColumnType.Text,
       },
       button: {
         title: 'Button',
-        type: 'custom',
+        type: ColumnType.Custom,
         renderComponent: ButtonViewComponent,
-        onComponentInitFunction(instance) {
-          instance.save.subscribe(row => {
+        onComponentInitFunction(instance: any) {
+          instance.save.subscribe((row: any) => {
             alert(`${row.name} saved!`)
           });
         }

@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 
 import { routes } from './pages.routes';
 import { SharedModule } from '../shared/shared.module';
-import { NgxSmartTableModule } from 'ngx-smart-table';
+import { NgxSmartTableModule } from 'angular2-smart-table';
 
 @NgModule({
   imports: [

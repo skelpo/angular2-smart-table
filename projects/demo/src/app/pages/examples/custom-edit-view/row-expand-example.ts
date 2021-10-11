@@ -42,7 +42,7 @@ export class DivViewComponent {
 @Component({
   selector: 'row-expand-view',
   template: `
-    <ngx-smart-table [settings]="settings" [source]="data"></ngx-smart-table>
+    <angular2-smart-table [settings]="settings" [source]="data"></angular2-smart-table>
   `,
 })
 export class RowExpandComponent implements OnInit {

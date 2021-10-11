@@ -1,22 +1,17 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../../out-tsc/app",
     "types": [
       "node"
-    ],
-    "baseUrl": "./",
-    "paths": {
-      "tslib" : ["../../node_modules/tslib/tslib.d.ts"],
-      "ngx-smart-table": ["../../projects/ngx-smart-table/src/public-api.ts"]
-    },
+    ]
   },
   "files": [
     "src/main.ts",
     "src/polyfills.ts"
   ],
   "include": [
-    "src/**/*.d.ts",
-    "../ngx-smart-table/src/**/*.ts"
+    "src/**/*.d.ts"
   ]
 }

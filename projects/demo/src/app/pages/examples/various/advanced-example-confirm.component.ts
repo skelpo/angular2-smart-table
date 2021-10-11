@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 
-import { LocalDataSource } from 'ngx-smart-table';
+import { LocalDataSource } from 'angular2-smart-table';
 
 @Component({
   selector: 'advance-example-comfirm',
   template: `
-    <ngx-smart-table
+    <angular2-smart-table
       [settings]="settings"
       [source]="source"
       (deleteConfirm)="onDeleteConfirm($event)"
       (editConfirm)="onSaveConfirm($event)"
-      (createConfirm)="onCreateConfirm($event)"></ngx-smart-table>
+      (createConfirm)="onCreateConfirm($event)"></angular2-smart-table>
   `,
 })
 export class AdvancedExampleConfirmComponent {
@@ -127,7 +127,7 @@ export class AdvancedExampleConfirmComponent {
     this.source = new LocalDataSource(this.data);
   }
 
-  onDeleteConfirm(event) {
+  onDeleteConfirm(event: any) {
     if (window.confirm('Are you sure you want to delete?')) {
       event.confirm.resolve();
     } else {
@@ -135,7 +135,7 @@ export class AdvancedExampleConfirmComponent {
     }
   }
 
-  onSaveConfirm(event) {
+  onSaveConfirm(event: any) {
     if (window.confirm('Are you sure you want to save?')) {
       event.newData['name'] += ' + added in code';
       event.confirm.resolve(event.newData);
@@ -144,7 +144,7 @@ export class AdvancedExampleConfirmComponent {
     }
   }
 
-  onCreateConfirm(event) {
+  onCreateConfirm(event: any) {
     if (window.confirm('Are you sure you want to create?')) {
       event.newData['name'] += ' + added in code';
       event.confirm.resolve(event.newData);

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { ColumnType } from 'angular2-smart-table';
 
 @Component({
   selector: 'advanced-example-types',
   template: `
-    <ngx-smart-table [settings]="settings" [source]="data"></ngx-smart-table>
+    <angular2-smart-table [settings]="settings" [source]="data"></angular2-smart-table>
   `,
 })
 export class AdvancedExamplesTypesComponent {
@@ -108,9 +109,11 @@ export class AdvancedExamplesTypesComponent {
     columns: {
       id: {
         title: 'ID',
+        type: ColumnType.Text,
       },
       name: {
         title: 'Full Name',
+        type: ColumnType.Text,
         editor: {
           type: 'completer',
           config: {
@@ -125,7 +128,7 @@ export class AdvancedExamplesTypesComponent {
       },
       username: {
         title: 'User Name',
-        type: 'html',
+        type: ColumnType.Html,
         editor: {
           type: 'list',
           config: {
@@ -138,16 +141,18 @@ export class AdvancedExamplesTypesComponent {
       },
       email: {
         title: 'Email',
-        type: 'string',
+        type: ColumnType.Text,
       },
       comments: {
         title: 'Comments',
+        type: ColumnType.Text,
         editor: {
           type: 'textarea',
         },
       },
       passed: {
         title: 'Passed',
+        type: ColumnType.Text,
         editor: {
           type: 'checkbox',
           config: {

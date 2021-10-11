@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import {Settings} from "ngx-smart-table";
+import {Settings} from "angular2-smart-table";
 
 @Component({
   selector: 'basic-example-data',
   template: `
-    <ngx-smart-table [settings]="settings" [source]="data"></ngx-smart-table>
+    <angular2-smart-table [settings]="settings" [source]="data"></angular2-smart-table>
   `,
 })
 export class BasicExampleDataComponent {

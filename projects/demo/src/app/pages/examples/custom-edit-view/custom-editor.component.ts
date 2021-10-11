@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { DefaultEditor } from 'ngx-smart-table';
+import { DefaultEditor } from 'angular2-smart-table';
 
 @Component({
   template: `
@@ -28,9 +28,9 @@ import { DefaultEditor } from 'ngx-smart-table';
 })
 export class CustomEditorComponent extends DefaultEditor implements AfterViewInit {
 
-  @ViewChild('name') name: ElementRef;
-  @ViewChild('url') url: ElementRef;
-  @ViewChild('htmlValue') htmlValue: ElementRef;
+  @ViewChild('name') name!: ElementRef;
+  @ViewChild('url') url!: ElementRef;
+  @ViewChild('htmlValue') htmlValue!: ElementRef;
 
   constructor() {
     super();

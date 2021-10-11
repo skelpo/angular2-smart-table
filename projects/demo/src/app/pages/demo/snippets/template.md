@@ -2,7 +2,7 @@
 
 @Component({
   template: `
-    <ngx-smart-table [settings]="settings"></ngx-smart-table>
+    <angular2-smart-table [settings]="settings"></angular2-smart-table>
   `
 })
 // ...
