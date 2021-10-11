@@ -5,9 +5,9 @@ import { Column } from './data-set/column';
 import { Row } from './data-set/row';
 import { DataSet } from './data-set/data-set';
 import { DataSource } from './data-source/data-source';
-import {EventEmitter} from '@angular/core';
+import { EventEmitter } from '@angular/core';
 
-import {Settings} from "./settings";
+import { Settings } from "./settings";
 
 export class Grid {
 
@@ -24,8 +24,8 @@ export class Grid {
   private sourceOnUpdatedSubscription!: Subscription;
 
   constructor(source: DataSource, settings: any) {
-   this.setSettings(settings);
-   this.setSource(source);
+    this.setSettings(settings);
+    this.setSource(source);
   }
 
 
@@ -107,7 +107,7 @@ export class Grid {
     return this.onSelectRowSource.asObservable();
   }
 
-  expandRow(row: Row){
+  expandRow(row: Row) {
     this.dataSet.expandRow(row);
   }
 
@@ -199,11 +199,12 @@ export class Grid {
     if (this.shouldProcessChange(changes)) {
       this.dataSet.setData(changes['elements']);
       if (this.getSetting('selectMode') !== 'multi') {
-        const row = this.determineRowToSelect(changes);
-
-        if (row) {
+        try {
+          const row = this.determineRowToSelect(changes);
           this.onSelectRowSource.next(row);
-        } else {
+        }
+        catch (e) {
+          console.log(e);
           this.onDeselectRowSource.next(null);
         }
       }

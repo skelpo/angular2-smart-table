@@ -24,6 +24,18 @@ import {FilterDefault} from "./filter-default";
                         [column]="column"
                         (filter)="onFilter($event)">
       </completer-filter>
+      <date-filter *ngSwitchCase="'date'"
+                        [query]="query"
+                        [ngClass]="inputClass"
+                        [column]="column"
+                        (filter)="onFilter($event)">
+      </date-filter>
+      <mselect-filter *ngSwitchCase="'multiple'"
+                        [query]="query"
+                        [ngClass]="inputClass"
+                        [column]="column"
+                        (filter)="onFilter($event)">
+      </mselect-filter>
       <input-filter *ngSwitchDefault
                     [query]="query"
                     [ngClass]="inputClass"

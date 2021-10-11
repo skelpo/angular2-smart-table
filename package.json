@@ -1,6 +1,6 @@
 {
   "name": "my-workspace",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -20,6 +20,7 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "angular2-multiselect-dropdown": "~5.0.4",
     "highlight.js": "~11.2.0",
     "lodash-es": "4.17.21",
     "ng2-completer": "^9.0.1",

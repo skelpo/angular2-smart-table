@@ -12,17 +12,22 @@ import { InputFilterComponent } from './filter-types/input-filter.component';
 import { SelectFilterComponent } from './filter-types/select-filter.component';
 import { DefaultFilter } from './filter-types/default-filter';
 import { FilterDefault } from './filter-default';
+import { DateFilterComponent } from './filter-types/date-filter.component';
+import { MselectFilterComponent } from './filter-types/mselect-filter.component';
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 
 const FILTER_COMPONENTS = [
   FilterDefault,
   DefaultFilter,
   FilterComponent,
+  DateFilterComponent,
   DefaultFilterComponent,
   CustomFilterComponent,
   CheckboxFilterComponent,
   CompleterFilterComponent,
   InputFilterComponent,
   SelectFilterComponent,
+  MselectFilterComponent
 ];
 
 @NgModule({
@@ -31,6 +36,7 @@ const FILTER_COMPONENTS = [
     FormsModule,
     ReactiveFormsModule,
     Ng2CompleterModule,
+    AngularMultiSelectModule
   ],
   declarations: [
     ...FILTER_COMPONENTS,

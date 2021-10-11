@@ -45,7 +45,7 @@ export class DataSet {
   }
 
   getRows(): Array<Row> {
-    return this.rows;
+    return this.rows ?? [];
   }
 
   getFirstRow(): Row {

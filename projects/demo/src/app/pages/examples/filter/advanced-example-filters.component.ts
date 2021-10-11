@@ -68,13 +68,21 @@ export class AdvancedExampleFiltersComponent {
       name: {
         title: 'Full Name',
         filter: {
-          type: 'list',
+          type: 'multiple',
           config: {
-            selectText: 'Select...',
-            list: [
-              { value: 'Glenna Reichert', title: 'Glenna Reichert' },
-              { value: 'Kurtis Weissnat', title: 'Kurtis Weissnat' },
-              { value: 'Chelsey Dietrich', title: 'Chelsey Dietrich' },
+            selectedItems: [],
+            dropdownSettings: {
+              singleSelection: false,
+              text: "Select",
+              selectAllText: "Select All",
+              unSelectAllText: 'UnSelect All',
+              enableSearchFilter: true,
+              classes: ""
+            },
+            dropdownList: [
+              { id: 'Glenna Reichert', itemName: 'Glenna Reichert' },
+              { id: 'Kurtis Weissnat', itemName: 'Kurtis Weissnat' },
+              { id: 'Chelsey Dietrich', itemName: 'Chelsey Dietrich' },
             ],
           },
         },

@@ -17,7 +17,7 @@ export interface Settings {
   edit?: EditAction;
   add?: AddAction;
   delete?: DeleteAction;
-  filter?: Filter;
+  filter?: any;
   expandedRowComponent?: any;
   expand?: Expand;
   pager?: Pager;
