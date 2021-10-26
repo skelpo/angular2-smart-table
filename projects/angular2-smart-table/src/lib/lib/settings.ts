@@ -8,6 +8,7 @@ export enum SelectModeOptions {
 export interface Settings {
   columns?: IColumns;
   resizable?: boolean;
+  hideable?: boolean; // true = i can hide columns
   mode?: 'external' | 'inline';
   hideHeader?: boolean;
   hideSubHeader?: boolean;

@@ -15,7 +15,7 @@ import { Column } from '../../../../lib/data-set/column';
       {{ column.title }}
     </a>
     <span class="angular2-smart-sort" *ngIf="!column.isSortable">{{ column.title }}</span>
-    <button style="position: absolute; top:0; right:0; border:none" (click)="_hideColumnClicked($event)">X</button>
+    <button style="position: absolute; top:0; right:0; border:none" *ngIf="isHideable" (click)="_hideColumnClicked($event)">X</button>
   `,
 })
 export class TitleComponent implements OnChanges {
@@ -23,6 +23,7 @@ export class TitleComponent implements OnChanges {
   currentDirection = '';
   @Input() column!: Column;
   @Input() source!: DataSource;
+  @Input() isHideable!: boolean;
   @Output() sort = new EventEmitter<any>();
   @Output() hide = new EventEmitter<any>();
 

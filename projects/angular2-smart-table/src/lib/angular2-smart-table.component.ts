@@ -55,6 +55,7 @@ export class Angular2SmartTableComponent {
     hideHeader: false,
     hideSubHeader: false,
     resizable: false,
+    hideable: false,
     actions: {
       columnTitle: 'Actions',
       add: true,
