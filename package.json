@@ -8,6 +8,8 @@
     "build:lib": "ng build angular2-smart-table --configuration production",
     "watch:demo": "ng serve demo",
     "watch:lib": "ng build angular2-smart-table --watch --configuration development",
+    "docs:gh-pages": "npm run build:demo -- --base-href /angular2-smart-table/ && npm run deploy:gh-pages",
+    "deploy:gh-pages": "ngh --dir ./dist/demo",
     "test": "ng test"
   },
   "private": true,
@@ -35,6 +37,7 @@
     "@types/jasmine": "~3.8.0",
     "@types/lodash-es": "^4.17.5",
     "@types/node": "^12.11.1",
+    "angular-cli-ghpages": "^0.5.3",
     "raw-loader": "^4.0.2",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
