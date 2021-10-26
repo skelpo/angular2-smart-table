@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Settings } from 'angular2-smart-table';
 
 @Component({
   selector: 'column-hide-example',
@@ -59,7 +60,8 @@ export class ColumnHideExampleComponent {
     },
   ];
 
-  settings = {
+  settings : Settings = {
+    hideable: true,
     columns: {
       id: {
         title: 'ID',

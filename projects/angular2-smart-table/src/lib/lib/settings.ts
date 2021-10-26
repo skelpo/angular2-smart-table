@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Cell } from "./data-set/cell";
 
 export enum SelectModeOptions {
   Single = "single",
@@ -51,21 +51,24 @@ export enum ISortDirection {
   DESC = "desc"
 }
 
+export type ColumnValuePrepareFunction = (cellValue: any, row: any, cell: Cell) => any;
+export type ColumnFilterFunction = (cellValue: any, searchString: string, rowData: any, cellName: string, row: any) => void;
+
+
+
 export interface IColumn {
   title?: string;
   type?: IColumnType;
   class?: string;
   width?: string;
-  editable?: boolean;
-  sort?: boolean;
   sortDirection?: ISortDirection;
   defaultSortDirection?: string;
   editor?: { type: string, config?: any, component?: any };
   filter?: { type: string, config?: any, component?: any } | boolean;
   renderComponent?: any;
   compareFunction?: Function;
-  valuePrepareFunction?: Function;
-  filterFunction?: Function;
+  valuePrepareFunction?: ColumnValuePrepareFunction;
+  filterFunction?: ColumnFilterFunction;
   onComponentInitFunction?: Function;
 
   placeholder?: string;

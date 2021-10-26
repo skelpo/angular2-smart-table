@@ -16,7 +16,7 @@ export class LocalFilter {
       for (var i = 0; i < parts.length && typeof prop !== 'undefined'; i++) {
         prop = prop[parts[i]];
       }
-      return filter.call(null, prop, search, data, field);
+      return filter.call(null, prop, search, data, field, el);
     });
   }
 }

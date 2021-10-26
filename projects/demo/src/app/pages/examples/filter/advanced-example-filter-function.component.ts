@@ -82,7 +82,7 @@ export class AdvancedExampleFilterFunctionComponent {
       delete: false,
     },
     pager: {
-        perPage: 8,
+      perPage: 8,
     },
     columns: {
       id: {
@@ -96,7 +96,7 @@ export class AdvancedExampleFilterFunctionComponent {
       },
       companyName: {
         title: 'Company Name',
-        filterFunction: (cell: any, search: string, row: any) => {
+        filterFunction: (cell: any, search: any, row: any, field: any, el: any) => {
           if (search.length > 0 && search[0] === '-') {
             const re = new RegExp(search.substring(1), 'gi');
             if (cell.match(re)) {
@@ -105,8 +105,12 @@ export class AdvancedExampleFilterFunctionComponent {
               return true;
             }
           } else {
+
+
             const re = new RegExp(search, 'gi');
-            if (cell.match(re) || row.companyId.toString().match(re)) {
+
+
+            if (cell.match(re) || el.companyId?.toString().match(re)) {
               return true;
             } else {
               return false;

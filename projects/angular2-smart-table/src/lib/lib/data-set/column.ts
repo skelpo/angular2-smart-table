@@ -1,4 +1,4 @@
-import { IColumn, IColumnType, ISortDirection } from '../settings';
+import { ColumnFilterFunction, ColumnValuePrepareFunction, IColumn, IColumnType, ISortDirection } from '../settings';
 import { DataSet } from './data-set';
 
 export class Column implements IColumn {
@@ -19,8 +19,8 @@ export class Column implements IColumn {
   filter?: { type: string, config: any, component: any } = { type: '', config: {}, component: null };
   renderComponent?: any = null;
   compareFunction?: Function;
-  valuePrepareFunction?: Function;
-  filterFunction?: Function;
+  valuePrepareFunction?: ColumnValuePrepareFunction;
+  filterFunction?: ColumnFilterFunction;
   onComponentInitFunction?: Function;
 
   constructor(public id: string, protected settings: any, protected dataSet: DataSet) {
@@ -70,8 +70,8 @@ export class Column implements IColumn {
     this.defaultSortDirection = ['asc', 'desc']
       .indexOf(this.settings['sortDirection']) !== -1 ? this.settings['sortDirection'] : '';
     this.isSortable = typeof this.settings['sort'] === 'undefined' ? true : !!this.settings['sort'];
-    this.isEditable = typeof this.settings['editable'] === 'undefined' ? true : !!this.settings['editable'];
-    this.isAddable = typeof this.settings['addable'] === 'undefined' ? true : !!this.settings['addable'];
+    this.isEditable = typeof this.settings['isEditable'] === 'undefined' ? true : !!this.settings['isEditable'];
+    this.isAddable = typeof this.settings['isAddable'] === 'undefined' ? true : !!this.settings['isAddable'];
     this.sortDirection = this.prepareSortDirection();
 
     this.compareFunction = this.settings['compareFunction'];
