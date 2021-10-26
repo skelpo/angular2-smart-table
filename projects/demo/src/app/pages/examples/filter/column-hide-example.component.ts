@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'advanced-example-filters',
+  selector: 'column-hide-example',
   template: `
     <angular2-smart-table [settings]="settings" [source]="data"></angular2-smart-table>
   `,
 })
-export class AdvancedExampleFiltersComponent {
+export class ColumnHideExampleComponent {
 
   data = [
     {

@@ -1,18 +1,19 @@
+import { IColumn, IColumnType, ISortDirection } from '../settings';
 import { DataSet } from './data-set';
 
-export class Column {
+export class Column implements IColumn {
 
   placeholder: string = '';
   title: string = '';
   hide: boolean = false;
-  type?: string = '';
+  type?: IColumnType = IColumnType.Text;
   class?: string = '';
   width?: string = '';
   isSortable?: boolean = false;
   isEditable?: boolean = true;
   isAddable?: boolean = true;
   isFilterable?: boolean = false;
-  sortDirection?: string = '';
+  sortDirection?: ISortDirection = ISortDirection.ASC;
   defaultSortDirection?: string = '';
   editor?: { type: string, config: any, component: any } = { type: '', config: {}, component: null };
   filter?: { type: string, config: any, component: any } = { type: '', config: {}, component: null };
@@ -79,16 +80,16 @@ export class Column {
     this.onComponentInitFunction = this.settings['onComponentInitFunction'];
   }
 
-  prepareType(): string {
+  prepareType(): IColumnType {
     return this.settings['type'] || this.determineType();
   }
 
-  prepareSortDirection(): string {
-    return this.settings['sort'] === 'desc' ? 'desc' : 'asc';
+  prepareSortDirection(): ISortDirection {
+    return this.settings['sort'] === ISortDirection.DESC ? ISortDirection.DESC : ISortDirection.ASC;
   }
 
-  determineType(): string {
+  determineType(): IColumnType {
     // TODO: determine type by data
-    return 'text';
+    return IColumnType.Text;
   }
 }

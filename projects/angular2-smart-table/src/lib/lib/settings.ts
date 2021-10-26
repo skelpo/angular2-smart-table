@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
 
 export enum SelectModeOptions {
-    Single = "single",
-    Multi = "multi"
+  Single = "single",
+  Multi = "multi"
 }
 
 export interface Settings {
-  columns?: Columns;
+  columns?: IColumns;
   resizable?: boolean;
   mode?: 'external' | 'inline';
   hideHeader?: boolean;
@@ -35,24 +35,29 @@ export interface Expand {
   expandRowButtonContent?: string;
 }
 
-export interface Columns {
-  [key: string]: Column;
+export interface IColumns {
+  [key: string]: IColumn;
 }
 
-export enum ColumnType {
+export enum IColumnType {
   Text = "text",
   Html = "html",
   Custom = "custom"
 }
 
-export interface Column {
+export enum ISortDirection {
+  ASC = "asc",
+  DESC = "desc"
+}
+
+export interface IColumn {
   title?: string;
-  type?: ColumnType;
+  type?: IColumnType;
   class?: string;
   width?: string;
   editable?: boolean;
   sort?: boolean;
-  sortDirection?: 'asc' | 'desc';
+  sortDirection?: ISortDirection;
   defaultSortDirection?: string;
   editor?: { type: string, config?: any, component?: any };
   filter?: { type: string, config?: any, component?: any } | boolean;
@@ -61,11 +66,18 @@ export interface Column {
   valuePrepareFunction?: Function;
   filterFunction?: Function;
   onComponentInitFunction?: Function;
+
+  placeholder?: string;
+  hide?: boolean;
+  isSortable?: boolean;
+  isEditable?: boolean;
+  isAddable?: boolean;
+  isFilterable?: boolean;
 }
 
 export interface Attribute {
-    id?: string;
-    class?: string;
+  id?: string;
+  class?: string;
 }
 
 export interface Actions {

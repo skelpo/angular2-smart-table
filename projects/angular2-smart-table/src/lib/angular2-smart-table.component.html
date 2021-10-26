@@ -1,21 +1,8 @@
-<!-- ciaoneeeee
 <angular2-smart-table-tags-list
-  [tags]="[
-    'cioane',
-    'blabla',
-    'cioane',
-    'blabla',
-    'cioane',
-    'blabla',
-    'cioane',
-    'blabla',
-    'cioane',
-    'blabla',
-    'cioane',
-    'blabla'
-  ]"
-></angular2-smart-table-tags-list> -->
-<div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+  [tags]="getNotVisibleColumns()" (close)="toggleColumnVisibility($event)"
+></angular2-smart-table-tags-list>
+
+<div style="overflow-x: auto; -webkit-overflow-scrolling: touch">
   <table [id]="tableId" [ngClass]="tableClass">
     <thead
       angular2-st-thead
@@ -27,6 +14,7 @@
       (create)="create.emit($event)"
       (selectAllRows)="onSelectAllRows($event)"
       (sort)="sort($event)"
+      (hide)="onHideHeader($event)"
       (filter)="filter($event)"
     ></thead>
 
@@ -47,12 +35,11 @@
       (rowHover)="onRowHover($event)"
     ></tbody>
   </table>
-
-  <angular2-smart-table-pager
-    *ngIf="isPagerDisplay"
-    [source]="source"
-    [perPageSelect]="perPageSelect"
-    (changePage)="changePage($event)"
-  >
-  </angular2-smart-table-pager>
 </div>
+<angular2-smart-table-pager
+  *ngIf="isPagerDisplay"
+  [source]="source"
+  [perPageSelect]="perPageSelect"
+  (changePage)="changePage($event)"
+>
+</angular2-smart-table-pager>

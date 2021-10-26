@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { ViewCell, ColumnType } from 'angular2-smart-table';
+import { ViewCell, IColumnType } from 'angular2-smart-table';
 
 @Component({
   selector: 'button-view',
@@ -38,23 +38,23 @@ export class BasicExampleButtonViewComponent implements OnInit {
     columns: {
       id: {
         title: 'ID',
-        type: ColumnType.Text,
+        type: IColumnType.Text,
       },
       name: {
         title: 'Full Name',
-        type: ColumnType.Text,
+        type: IColumnType.Text,
       },
       username: {
         title: 'User Name',
-        type: ColumnType.Text,
+        type: IColumnType.Text,
       },
       email: {
         title: 'Email',
-        type: ColumnType.Text,
+        type: IColumnType.Text,
       },
       button: {
         title: 'Button',
-        type: ColumnType.Custom,
+        type: IColumnType.Custom,
         renderComponent: ButtonViewComponent,
         onComponentInitFunction(instance: any) {
           instance.save.subscribe((row: any) => {

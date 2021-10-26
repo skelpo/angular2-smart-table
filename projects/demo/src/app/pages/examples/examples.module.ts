@@ -33,6 +33,7 @@ import {
 } from './custom-edit-view/basic-example-button-view.component';
 import { BasicExampleCustomActionsItemComponent } from './custom-edit-view/basic-example-custom-actions-item.component';
 import { BasicExampleRowSelectionComponent } from './various/row-selection/basic-example-row-selection.component';
+import { ColumnHideExampleComponent } from './filter/column-hide-example.component';
 
 const EXAMPLES_COMPONENTS = [
   AdvancedExampleFiltersComponent,
@@ -41,6 +42,7 @@ const EXAMPLES_COMPONENTS = [
   AdvancedExamplesCustomEditorComponent,
   AdvancedExamplesTypesComponent,
   AdvancedExampleServerComponent,
+  ColumnHideExampleComponent,
   BasicExampleLoadComponent,
   BasicExampleMultiSelectComponent,
   BasicExampleSourceComponent,

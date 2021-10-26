@@ -1,19 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { DefaultFilter } from './default-filter';
 import { HttpClient } from "@angular/common/http";
+import { DropdownSettings } from 'angular2-multiselect-dropdown/lib/multiselect.interface';
 
 export interface Config {
     dropdownList: Array<any>,
     selectedItems: Array<any>,
     dropdownSettings: DropdownSettings
-}
-export interface DropdownSettings {
-    singleSelection?: boolean,
-    text?: string,
-    selectAllText?: string,
-    unSelectAllText?: string,
-    enableSearchFilter?: boolean,
-    classes?: string
 }
 
 @Component({
@@ -40,18 +33,21 @@ export class MselectFilterComponent extends DefaultFilter implements OnInit {
     }
 
     ngOnInit() {
-        console.log(this)
         this.column.filterFunction = this.onfilterValues.bind(this);
         const config: Config = this.column.getFilterConfig();
         this.dropdownList = config.dropdownList || [];
         this.selectedItems = config.selectedItems || [];
-        let setting = {
+        let setting: DropdownSettings = {
             singleSelection: false,
             text: "Select",
             selectAllText: "Select All",
             unSelectAllText: 'UnSelect All',
             enableSearchFilter: true,
-            classes: ""
+            classes: "myclass",
+            maxHeight: 200,
+            position: 'top',
+            autoPosition: true,
+
         };
         this.dropdownSettings = Object.assign(setting, config.dropdownSettings);
     }
@@ -59,7 +55,6 @@ export class MselectFilterComponent extends DefaultFilter implements OnInit {
     onfilterValues(cellValue: string, search: string, data: any, cellName: string) {
         if (search.indexOf(this.selector) != -1) {
             let searchArray = search.split(this.selector);
-            console.log(searchArray)
             if (searchArray.indexOf(cellValue) != -1) {
                 return true;
             }
@@ -69,7 +64,6 @@ export class MselectFilterComponent extends DefaultFilter implements OnInit {
     }
 
     onItemSelect(item: any) {
-        console.log(item)
         this.updateQuery();
     }
     OnItemDeSelect(item: any) {
@@ -82,9 +76,7 @@ export class MselectFilterComponent extends DefaultFilter implements OnInit {
         this.updateQuery();
     }
     updateQuery() {
-        console.log(this.selectedItems)
         this.query = this.selectedItems.map(item => item.id).join(this.selector);//.replace(/ /g, '')
-        console.log(this.query)
         this.setFilter()
     }
 }

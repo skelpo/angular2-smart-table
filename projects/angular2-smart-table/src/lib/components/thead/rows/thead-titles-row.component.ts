@@ -18,7 +18,7 @@ import { Column } from "../../../lib/data-set/column";
         class="angular2-smart-th {{ column.id }}"
         [ngClass]="column.class ?? ''"
         [style.width]="column.width">
-      <angular2-st-column-title [source]="source" [column]="column" (sort)="sort.emit($event)"></angular2-st-column-title>
+      <angular2-st-column-title [source]="source" [column]="column" (sort)="sort.emit($event)" (hide)="hide.emit($event)"></angular2-st-column-title>
       <div *ngIf="isResizable" angular2-resizer class="angular2-resizer-block"></div>
     </th>
     <th angular2-st-actions-title *ngIf="showActionColumnRight" [grid]="grid"></th>
@@ -31,6 +31,7 @@ export class TheadTitlesRowComponent implements OnChanges {
   @Input() source!: DataSource;
 
   @Output() sort = new EventEmitter<any>();
+  @Output() hide = new EventEmitter<any>();
   @Output() selectAllRows = new EventEmitter<any>();
 
   isMultiSelectVisible!: boolean;

@@ -7,7 +7,7 @@ import { DataSource } from './lib/data-source/data-source';
 import { LocalDataSource } from './lib/data-source/local/local.data-source';
 import { Grid } from './lib/grid';
 import { deepExtend, getPageForRowIndex } from './lib/helpers';
-import { SelectModeOptions, Settings } from './lib/settings';
+import { IColumn, SelectModeOptions, Settings } from './lib/settings';
 
 @Component({
   selector: 'angular2-smart-table',
@@ -108,6 +108,7 @@ export class Angular2SmartTableComponent {
   private destroyed$: Subject<void> = new Subject<void>();
 
   ngOnChanges(changes: { [propertyName: string]: SimpleChange }) {
+    console.log('changes detected in angular2-smart-table');
     if (this.grid) {
       if (changes['settings']) {
         this.grid.setSettings(this.prepareSettings());
@@ -256,6 +257,21 @@ export class Angular2SmartTableComponent {
 
   filter($event: any) {
     this.resetAllSelector();
+  }
+
+  getNotVisibleColumns(): Array<IColumn> {
+    return (this.grid.getColumns() || []).filter((column: IColumn) => column.hide);
+  }
+
+  toggleColumnVisibility(columnId: string) {
+    (this.settings as any).columns[columnId].hide = false;
+    //this.grid.setSettings(this.settings);
+    this.grid.setSettings(this.prepareSettings());
+  }
+
+  onHideHeader(columnId: string) {
+    (this.settings as any).columns[columnId].hide = true;
+    this.grid.setSettings(this.prepareSettings());
   }
 
   private resetAllSelector() {
